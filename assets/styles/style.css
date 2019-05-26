@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  margin-top: 5vw;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  background-color: #5c6275;
+  color: #FFFFFF;
+  font-size: calc(5px + 1vw);
+  width: 100%;
+}
+.navbar .navbar_nav a,
+.navbar .navbar_acc a {
+  margin: 0 2.5%;
+}
+.navbar .navbar_nav a:hover,
+.navbar .navbar_acc a:hover {
+  background-color: #878da0;
+}
+
+.button {
+  display: inline-block;
+  border: none;
+  border-radius: 2.5px;
+  cursor: pointer;
+  text-align: center;
+  background-color: #5c6275;
+  color: #FFFFFF;
+  font-size: calc(7.5px + 2.5vw);
+  padding: 0.75% 1.25%;
+}
+
+.col2 {
+  grid-template-columns: repeat(2, auto);
+}
+
+.col4 {
+  grid-template-columns: repeat(4, auto);
+}
+
+.rowspan2 {
+  grid-row: span 2;
+}
+
+.colspan2 {
+  grid-column: span 2;
+}
+
+.colspan4 {
+  grid-column: span 4;
+}
+
+/*# sourceMappingURL=style.css.map */
