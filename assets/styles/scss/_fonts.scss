@@ -1,2 +1,16 @@
-$size_title: calc(7.5px + 2.5vw);
-$size_text: calc(5px + 1vw);
+$size_title: calc(7.5px + 1.75vw);
+$size_text: calc(5px + 0.75vw);
+
+$size_custom_1: calc(5px + 0.375vw);
+$size_custom_5: calc(5px + 1vw);
+
+@font-face{
+	font-family: Oxygen;
+	src: url("../font/Oxygen-Light.ttf");
+}
+
+@font-face{
+	font-family: Oxygen;
+	src: url("../font/Oxygen-Regular.ttf");
+	font-weight: 200;
+}

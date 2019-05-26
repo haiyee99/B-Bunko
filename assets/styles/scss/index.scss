@@ -1,0 +1,101 @@
+@import 'colors';
+@import 'fonts';
+
+.page_index{
+	background-color: $color_secondary;
+	padding: 2.5% 10%;
+
+	.search_form{
+		display: grid;
+		grid-template-columns: 8fr 2fr;
+		grid-column-gap: 5%; 
+
+		.input_container{
+			border-bottom: 1px solid $color_text;
+			.fas{ color: $color_text; cursor: pointer; }
+			input[type="text"]{
+				background-color: $color_secondary;
+				border: none;
+
+				width: 95%;
+				padding: 0.75% 0;
+				margin-left: 1.25%;
+				font-size: $size_custom_5;
+			}
+			input[type="text"]:focus{ outline-width: 0; }
+		}
+
+		select{
+			background-color: $color_secondary;
+			border: none;
+			border-bottom: 1px solid $color_text;
+
+			padding: 0.75% 0;
+			font-size: $size_custom_5;
+			color: $color_text;
+		}
+		select:invalid{ color: gray; }
+		select:focus{ outline-width: 0; }
+	}
+
+	.notice_board{
+		height: 200px;
+
+		border-radius: 2.5px;
+		background-position: 0 10%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-image: url("../img/notice_board_wallpaper.jpg");
+	}
+
+	.rank_list{
+		.rank_title{ 
+			font-size: $size_title; 
+			color: $color_primary; 
+			padding: 1.25% 0;
+		}
+		.item_container{
+			display: grid;
+			grid-column-gap: 3.33%;
+			padding: 0 2.5%;
+
+			.item{
+				box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
+				border-radius: 3.33px;
+
+				.thumbnail{
+					height: 200px;
+
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-image: url("../img/pikachu.jpg");
+				}
+
+				.label{
+					padding: 5%;
+					.item_label{ font-size: $size_text; font-weight: bold; padding: 1.25% 0; }
+					.volume_label{ font-size: $size_custom_1; padding: 1.25% 0; }
+				}
+			}
+		}
+	}
+
+	.editor_picks{
+		.picks_container{
+			display: grid;
+			grid-column-gap: 1.25%;
+
+			.pick{ 
+				height: 250px;
+			
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+
+			.pick:first-of-type{ background-image: url("../img/pokeball.jpg"); }
+			.pick:last-of-type{ background-image: url("../img/pokeball2.jpg"); }
+		}
+	}
+}

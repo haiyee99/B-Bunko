@@ -1,28 +1,57 @@
 @import 'colors';
 @import 'fonts';
 
-body{ margin: 0; margin-top: 5vw; }
+body{ margin: 0; font-family: Oxygen; }
 a{ text-decoration: none; color: inherit; }
 
 .navbar{
-	// Preference
-	position: fixed;
-	top: 0;
-    // -------------
-
     display: grid;
-    grid-template-columns: 8fr 2fr;
+    grid-template-columns: 1fr 14fr;
 
-    background-color: $color_primary;
+    background-color: $color_secondary;
     color: $color_text;
     font-size: $size_text;
 
-    width: 100%;
+	width: 100%;
+	//padding: 0.75% 0;
 
-    .navbar_nav,
-    .navbar_acc{
-    	a{ margin: 0 2.5%; }
-    	a:hover{ background-color: $color_hover; }
+    .nav_icon{
+    	width: 50px;
+    	height: 50px;
+    	display: inline-block;
+    	border: 1px solid black;
+    }
+
+    .nav_content{
+    	position: relative;
+    	.nav_content_wrapper{
+    		width: 100%;
+	    	display: grid;
+	    	grid-template-columns: 5fr 2fr;
+
+	    	position: absolute;
+	    	top: 50%;
+	    	transform: translateY(-50%);
+
+	    	.nav_link{
+	    		position: relative;
+	    		padding-left: 2.5%; 
+	    		.nav_link_wrapper{
+	    			width: 100%;
+	    			position: absolute;
+	    			bottom: 0;
+	    			a{ margin-right: 5%; }
+	    		}
+	    	}
+	    	.nav_acc{
+	    		text-align: right;
+
+	    		.button{
+	    			padding: 1.25% 10%;
+	    			margin-left: 5%;
+	    		}
+	    	}
+    	}
     }
 }
 
@@ -36,10 +65,21 @@ a{ text-decoration: none; color: inherit; }
 	text-align: center;
 	background-color: $color_primary;
 	color: $color_text;
-	font-size: $size_title;
+	font-size: $size_text;
 
 	// Preference
 	padding: 0.75% 1.25%;
+}
+.button_1{
+	background-color: $color_secondary;
+	color: $color_primary;
+	border: 1px solid $color_primary;
+	box-shadow: 0 0 2.5px 1px $color_primary;
+}
+.button_2{
+	background-image: linear-gradient(to right, $color_primary, $color_ternary);
+	color: $color_secondary;
+	box-shadow: 0 0 2.5px 0 $color_ternary;
 }
 .disableButton{ 
 	opacity: 0.5; 
@@ -48,8 +88,23 @@ a{ text-decoration: none; color: inherit; }
 
 // Uses display: grid;
 .col2{ grid-template-columns: repeat(2, auto); }
-.col4{ grid-template-columns: repeat(4, auto); }
+.col5{ grid-template-columns: repeat(5, auto); }
+
+.col2_eq{ grid-template-columns: repeat(2, 1fr); }
+.col5_eq{ grid-template-columns: repeat(5, 1fr); }
 
 .rowspan2{ grid-row: span 2; }
 .colspan2{ grid-column: span 2; }
 .colspan4{ grid-column: span 4; }
+
+
+// Section
+.section:first-of-type{ margin-top: 2.75%; }
+.section{ margin-bottom: 3.5%; width: 100%; }
+.section:last-of-type{ margin-bottom: 0; }
+
+.section_title{ 
+	font-size: $size_title; 
+	color: $color_text; 
+	padding: 1.25% 0;
+}

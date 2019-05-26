@@ -1,0 +1,109 @@
+@font-face {
+  font-family: Oxygen;
+  src: url("../font/Oxygen-Light.ttf");
+}
+@font-face {
+  font-family: Oxygen;
+  src: url("../font/Oxygen-Regular.ttf");
+  font-weight: 200;
+}
+.page_index {
+  background-color: #f6f9fa;
+  padding: 2.5% 10%;
+}
+.page_index .search_form {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-column-gap: 5%;
+}
+.page_index .search_form .input_container {
+  border-bottom: 1px solid #707070;
+}
+.page_index .search_form .input_container .fas {
+  color: #707070;
+  cursor: pointer;
+}
+.page_index .search_form .input_container input[type="text"] {
+  background-color: #f6f9fa;
+  border: none;
+  width: 95%;
+  padding: 0.75% 0;
+  margin-left: 1.25%;
+  font-size: calc(5px + 1vw);
+}
+.page_index .search_form .input_container input[type="text"]:focus {
+  outline-width: 0;
+}
+.page_index .search_form select {
+  background-color: #f6f9fa;
+  border: none;
+  border-bottom: 1px solid #707070;
+  padding: 0.75% 0;
+  font-size: calc(5px + 1vw);
+  color: #707070;
+}
+.page_index .search_form select:invalid {
+  color: gray;
+}
+.page_index .search_form select:focus {
+  outline-width: 0;
+}
+.page_index .notice_board {
+  height: 200px;
+  border-radius: 2.5px;
+  background-position: 0 10%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/notice_board_wallpaper.jpg");
+}
+.page_index .rank_list .rank_title {
+  font-size: calc(7.5px + 1.75vw);
+  color: #82dafd;
+  padding: 1.25% 0;
+}
+.page_index .rank_list .item_container {
+  display: grid;
+  grid-column-gap: 3.33%;
+  padding: 0 2.5%;
+}
+.page_index .rank_list .item_container .item {
+  box-shadow: 3px 3px 10px 0px #888888;
+  border-radius: 3.33px;
+}
+.page_index .rank_list .item_container .item .thumbnail {
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/pikachu.jpg");
+}
+.page_index .rank_list .item_container .item .label {
+  padding: 5%;
+}
+.page_index .rank_list .item_container .item .label .item_label {
+  font-size: calc(5px + 0.75vw);
+  font-weight: bold;
+  padding: 1.25% 0;
+}
+.page_index .rank_list .item_container .item .label .volume_label {
+  font-size: calc(5px + 0.375vw);
+  padding: 1.25% 0;
+}
+.page_index .editor_picks .picks_container {
+  display: grid;
+  grid-column-gap: 1.25%;
+}
+.page_index .editor_picks .picks_container .pick {
+  height: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page_index .editor_picks .picks_container .pick:first-of-type {
+  background-image: url("../img/pokeball.jpg");
+}
+.page_index .editor_picks .picks_container .pick:last-of-type {
+  background-image: url("../img/pokeball2.jpg");
+}
+
+/*# sourceMappingURL=index.css.map */
