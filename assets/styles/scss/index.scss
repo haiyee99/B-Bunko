@@ -1,9 +1,11 @@
 @import 'colors';
 @import 'fonts';
+@import 'extends';
 
 .page_index{
 	background-color: $color_secondary;
 	padding: 2.5% 10%;
+	padding-bottom: 5%;
 
 	.search_form{
 		display: grid;
@@ -42,42 +44,17 @@
 		height: 200px;
 
 		border-radius: 2.5px;
-		background-position: 0 10%;
-		background-repeat: no-repeat;
-		background-size: cover;
+
+		@extend %image_cover;
+		background-position: 0 10%; // temporary
 		background-image: url("../img/notice_board_wallpaper.jpg");
 	}
 
-	.rank_list{
-		.rank_title{ 
+	.item_list{
+		.list_title{ 
 			font-size: $size_title; 
 			color: $color_primary; 
 			padding: 1.25% 0;
-		}
-		.item_container{
-			display: grid;
-			grid-column-gap: 3.33%;
-			padding: 0 2.5%;
-
-			.item{
-				box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
-				border-radius: 3.33px;
-
-				.thumbnail{
-					height: 200px;
-
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: cover;
-					background-image: url("../img/pikachu.jpg");
-				}
-
-				.label{
-					padding: 5%;
-					.item_label{ font-size: $size_text; font-weight: bold; padding: 1.25% 0; }
-					.volume_label{ font-size: $size_custom_1; padding: 1.25% 0; }
-				}
-			}
 		}
 	}
 
@@ -88,14 +65,133 @@
 
 			.pick{ 
 				height: 250px;
-			
-				background-position: center;
-				background-repeat: no-repeat;
-				background-size: cover;
+
+				@extend %image_cover;
 			}
 
 			.pick:first-of-type{ background-image: url("../img/pokeball.jpg"); }
 			.pick:last-of-type{ background-image: url("../img/pokeball2.jpg"); }
 		}
+	}
+}
+
+.manga_detail_popup{
+	display: block;
+	position: fixed;
+	top: 0; left: 0;
+
+	display: grid;
+	grid-template-columns: 42fr 23fr;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-color: $color_secondary;
+	overflow: scroll;
+
+
+	.detail_container{
+		$padding: 2.5%;
+		width: 100% - 2 * $padding;
+		height: 100% - 2 * $padding;
+		padding: $padding;
+
+		.close_btn .fa-times{ 
+			cursor: pointer; 
+			font-size: $size_custom_6;
+		}
+
+		.manga_detail{
+			display: grid;
+			padding: 0 5%;
+
+			div{ padding: 0.5% 0; }
+
+			.title_author_star{
+				display: grid;
+				grid-template-columns: 5fr 2fr;
+			}
+			.publisher_genre{
+				display: grid;
+				grid-template-columns: 2fr 5fr;
+			}
+
+			.star_wrapper{
+				padding: 0.75% 0;
+				font-size: $size_custom_7;
+
+				.manga_rating{ 
+					margin-left: 2.5%; 
+					font-size: $size_custom_5; }
+			}
+
+			.title_wrapper,
+			.author_wrapper,
+			.price_wrapper{
+				.cell_title{ font-size: $size_text; }
+				.cell_value{ font-size: $size_custom_7; 
+					color: #000; 
+					font-weight: bold;
+				}
+			}
+			.price_wrapper .cell_value{ color: $color_primary; }
+
+			.publisher_wrapper,
+			.genre_wrapper{
+				.cell_title{ font-size: $size_custom_3; }
+				.cell_value{ font-size: $size_text; 
+					color: #000;
+					font-weight: bold;
+				}
+			}
+
+			.synopsis_wrapper{
+				.cell_title{ font-size: $size_custom_5; 
+					font-weight: bold; }
+				.cell_value{ 
+					font-size: $size_text; 
+					text-align: justify; 
+					height: 100px;
+					overflow-y: scroll;
+					overflow-x: hidden;
+				}
+			}
+
+			.button_wrapper{
+				.button{ width: 17.5%; padding: 1% 0; }
+				.button:last-child{ margin-left: 2.5%; }
+			}
+		}
+
+		.manga_series{
+			.list_title{ 
+				font-size: $size_custom_5; 
+				font-weight: bold;
+				color: $color_text;
+				padding: 1% 5%;
+			}
+
+			.item_container{
+				position: relative;
+				padding: 0 7.5%;
+
+				.item{
+					.thumbnail{
+						height: 125px;
+					}
+					.label{
+						.item_label{ font-size: $size_custom_2; }
+					}
+				}
+
+				.next{ right: 1.5%; }
+				.prev{ left: 1.5%; }
+			}
+		}
+	}
+
+	.thumbnail_container{ 
+		@extend %image_cover; 
+		background-image: url("../img/pikachu.jpg");
 	}
 }

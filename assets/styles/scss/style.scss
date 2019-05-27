@@ -1,7 +1,8 @@
 @import 'colors';
 @import 'fonts';
+@import 'extends';
 
-body{ margin: 0; font-family: Oxygen; }
+body{ margin: 0; font-family: Oxygen; color: $color_text; user-select: none; }
 a{ text-decoration: none; color: inherit; }
 
 .navbar{
@@ -55,6 +56,18 @@ a{ text-decoration: none; color: inherit; }
     }
 }
 
+footer{
+	width: 100%;
+	padding: 0.33% 0;
+
+	position: fixed;
+	bottom: 0; left: 0;
+
+	text-align: center;
+	background-color: $color_secondary;
+	color: $color_text;
+}
+
 .button{
 	display: inline-block;
 
@@ -101,10 +114,101 @@ a{ text-decoration: none; color: inherit; }
 // Section
 .section:first-of-type{ margin-top: 2.75%; }
 .section{ margin-bottom: 3.5%; width: 100%; }
-.section:last-of-type{ margin-bottom: 0; }
+//.section:last-of-type{ margin-bottom: 0; }
 
 .section_title{ 
 	font-size: $size_title; 
 	color: $color_text; 
 	padding: 1.25% 0;
+}
+
+// Star Rating
+.star_wrapper{
+	display: inline-block;
+	.fa-star{ color: $color_text; cursor: pointer; }
+}
+
+.star_wrapper[value="1"],
+.star_wrapper[value="2"],
+.star_wrapper[value="3"],
+.star_wrapper[value="4"],
+.star_wrapper[value="5"]{
+	.fa-star:nth-child(1){ color: $color_primary; }
+}
+
+.star_wrapper[value="2"],
+.star_wrapper[value="3"],
+.star_wrapper[value="4"],
+.star_wrapper[value="5"]{
+	.fa-star:nth-child(2){ color: $color_primary; }
+}
+
+.star_wrapper[value="3"],
+.star_wrapper[value="4"],
+.star_wrapper[value="5"]{
+	.fa-star:nth-child(3){ color: $color_primary; }
+}
+
+.star_wrapper[value="4"],
+.star_wrapper[value="5"]{
+	.fa-star:nth-child(4){ color: $color_primary; }
+}
+
+.star_wrapper[value="5"]{
+	.fa-star:nth-child(5){ color: $color_primary; }
+}
+
+// Item List
+.item_list{
+	.list_title{ 
+		font-size: $size_title; 
+		color: $color_primary; 
+		padding: 1.25% 0;
+	}
+	.item_container{
+		display: grid;
+		grid-column-gap: 3.33%;
+		padding: 0 2.5%;
+		position: relative;
+
+		.item{
+			box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
+			border-radius: 3.33px;
+
+			.thumbnail{
+				height: 200px;
+
+				@extend %image_cover;
+				background-image: url("../img/pikachu.jpg");
+			}
+
+			.label{
+				padding: 5%;
+				.item_label{ font-size: $size_text; font-weight: bold; padding: 1.25% 0; }
+				.volume_label{ font-size: $size_custom_1; padding: 1.25% 0; }
+			}
+		}
+
+		.next, .prev{
+			position: absolute;
+			top: 50%; transform: translateY(-50%);
+
+			width: 30px;
+			height: 30px;
+
+			color: $color_primary;
+			border: 1px solid $color_primary;
+			border-radius: 5px;
+			box-shadow: 0 0 2.5px 1px $color_primary;
+			cursor: pointer;
+		}
+		.prev{ left: -2%; }
+		.next{ right: -2%; }
+	}
+}
+
+.centerize{
+	position: absolute;
+	top: 50%; left: 50%;
+	transform: translate(-50%, -50%);
 }
