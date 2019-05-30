@@ -1,0 +1,58 @@
+@import 'colors';
+@import 'fonts';
+@import 'extends';
+
+.loginRegister{
+	width: 100vw; height: 100vh;
+	position: absolute;
+	top: 0; left: 0;
+
+	display: grid;
+	grid-template-columns: 27fr 11fr;
+
+	.dummy{ background-color: $color_primary; }
+
+	.form{
+		padding: 15% 12.5%;
+
+		.form_icon{ 
+			display: block; 
+			width: 75px; height: 75px; 
+			margin: auto;
+			margin-bottom: 5%; 
+
+			img{ width: 100%; height: 100%; }
+		}
+
+		.switch_form_text{
+			text-align: center;
+			font-size: $size_text;
+			margin-bottom: 5%;
+		}
+
+		.loginForm{	
+			display: grid;
+
+			.input_container{
+				font-size: $size_text;
+				margin-bottom: 5%;
+
+				.label{ padding: 1.25% 0; }
+
+				input[type="text"],
+				input[type="email"],
+				input[type="password"]{
+					$vertical_padding: 1.75%;
+					$horizontal_padding: 1.25%;
+
+					width: 100% - 2 * $horizontal_padding;
+					padding: $vertical_padding $horizontal_padding;
+				}
+				input[type="submit"]{
+					width: 100%;
+					padding: 2.5% 0;
+				}
+			}
+		}
+	}
+}

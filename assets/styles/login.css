@@ -1,0 +1,62 @@
+@font-face {
+  font-family: Oxygen;
+  src: url("../font/Oxygen-Light.ttf");
+}
+@font-face {
+  font-family: Oxygen;
+  src: url("../font/Oxygen-Regular.ttf");
+  font-weight: 200;
+}
+.loginRegister {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: 27fr 11fr;
+}
+.loginRegister .dummy {
+  background-color: #34c5ff;
+}
+.loginRegister .form {
+  padding: 15% 12.5%;
+}
+.loginRegister .form .form_icon {
+  display: block;
+  width: 75px;
+  height: 75px;
+  margin: auto;
+  margin-bottom: 5%;
+}
+.loginRegister .form .form_icon img {
+  width: 100%;
+  height: 100%;
+}
+.loginRegister .form .switch_form_text {
+  text-align: center;
+  font-size: calc(5px + 0.75vw);
+  margin-bottom: 5%;
+}
+.loginRegister .form .loginForm {
+  display: grid;
+}
+.loginRegister .form .loginForm .input_container {
+  font-size: calc(5px + 0.75vw);
+  margin-bottom: 5%;
+}
+.loginRegister .form .loginForm .input_container .label {
+  padding: 1.25% 0;
+}
+.loginRegister .form .loginForm .input_container input[type="text"],
+.loginRegister .form .loginForm .input_container input[type="email"],
+.loginRegister .form .loginForm .input_container input[type="password"] {
+  width: 97.5%;
+  padding: 1.75% 1.25%;
+}
+.loginRegister .form .loginForm .input_container input[type="submit"] {
+  width: 100%;
+  padding: 2.5% 0;
+}
+
+/*# sourceMappingURL=login.css.map */

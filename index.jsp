@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	</head>
 	<body>
-		<%@ page import="java.util.Calendar"%>
+		<%@ page import="java.util.Calendar" %>
 
 		<%
 			String id = request.getParameter("id");
@@ -17,24 +17,7 @@
 		<%
 		if(!hasId){ %>
 			<div class="page_index">
-				<header class="navbar">
-					<a href="#" class="nav_icon"><img src="#"></a>
-					<div class="nav_content">
-						<div class="nav_content_wrapper">
-							<div class="nav_link">
-								<div class="nav_link_wrapper">
-									<a href="#">MANGA</a>
-									<a href="#">LIGHT NOVEL</a>
-								</div>
-							</div>
-							<div class="nav_acc">
-								<a href="#" class="button button_1">SIGN IN</a>
-								<a href="#" class="button button_2">SIGN UP</a>
-							</div>
-						</div>
-					</div>
-				</header>
-
+				<%@ include file="./header.jsp" %>
 				<form class="section search_form" id="search_form" action="#">
 					<div class="input_container">
 						<i class="fas fa-search" onclick="submit_search_form();"></i>
@@ -140,8 +123,7 @@
 					</div>
 				</div>
 
-				<% int year = Calendar.getInstance().get(Calendar.YEAR); %>
-				<footer>&copy Copyright B-Bunko <%=year%></footer>
+				<%@ include file="./footer.jsp" %>
 			</div> <%
 		} else{ %>
 			<div class="manga_detail_popup">
@@ -238,7 +220,6 @@
 					</div>
 				</div>
 				<div class="thumbnail_container"></div>
-				
 			</div>
 		<% } %>
 	</body>
