@@ -57,7 +57,8 @@ a {
 .navbar .nav_content .nav_content_wrapper .nav_link .nav_link_wrapper {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .navbar .nav_content .nav_content_wrapper .nav_link .nav_link_wrapper a {
   margin-right: 5%;
@@ -68,6 +69,47 @@ a {
 .navbar .nav_content .nav_content_wrapper .nav_acc .button {
   padding: 1.25% 10%;
   margin-left: 5%;
+}
+.navbar .nav_content .nav_content_wrapper .nav_acc .logged_msg {
+  margin-right: 5%;
+}
+
+.header_search_form {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-column-gap: 5%;
+}
+.header_search_form .input_container {
+  border-bottom: 1px solid #707070;
+}
+.header_search_form .input_container .fas {
+  color: #707070;
+  cursor: pointer;
+}
+.header_search_form .input_container input[type="text"] {
+  background-color: #f6f9fa;
+  border: none;
+  width: 95%;
+  padding: 0.75% 0;
+  margin-left: 1.25%;
+  font-size: calc(5px + 1vw);
+}
+.header_search_form .input_container input[type="text"]:focus {
+  outline-width: 0;
+}
+.header_search_form select {
+  background-color: #f6f9fa;
+  border: none;
+  border-bottom: 1px solid #707070;
+  padding: 0.75% 0;
+  font-size: calc(5px + 1vw);
+  color: #707070;
+}
+.header_search_form select:invalid {
+  color: gray;
+}
+.header_search_form select:focus {
+  outline-width: 0;
 }
 
 footer {
@@ -200,6 +242,7 @@ footer {
 .item_list .item_container {
   display: grid;
   grid-column-gap: 3.33%;
+  grid-row-gap: 3.5%;
   padding: 0 2.5%;
   position: relative;
 }

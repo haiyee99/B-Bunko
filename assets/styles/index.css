@@ -13,47 +13,13 @@
   background-size: cover;
 }
 
-.page_index {
-  background-color: #f6f9fa;
+.page_index, .search_result {
   padding: 2.5% 10%;
   padding-bottom: 5%;
 }
-.page_index .search_form {
-  display: grid;
-  grid-template-columns: 8fr 2fr;
-  grid-column-gap: 5%;
-}
-.page_index .search_form .input_container {
-  border-bottom: 1px solid #707070;
-}
-.page_index .search_form .input_container .fas {
-  color: #707070;
-  cursor: pointer;
-}
-.page_index .search_form .input_container input[type="text"] {
+
+.page_index {
   background-color: #f6f9fa;
-  border: none;
-  width: 95%;
-  padding: 0.75% 0;
-  margin-left: 1.25%;
-  font-size: calc(5px + 1vw);
-}
-.page_index .search_form .input_container input[type="text"]:focus {
-  outline-width: 0;
-}
-.page_index .search_form select {
-  background-color: #f6f9fa;
-  border: none;
-  border-bottom: 1px solid #707070;
-  padding: 0.75% 0;
-  font-size: calc(5px + 1vw);
-  color: #707070;
-}
-.page_index .search_form select:invalid {
-  color: gray;
-}
-.page_index .search_form select:focus {
-  outline-width: 0;
 }
 .page_index .notice_board {
   height: 200px;
@@ -191,6 +157,24 @@
 }
 .manga_detail_popup .thumbnail_container {
   background-image: url("../img/pikachu.jpg");
+}
+
+.search_result {
+  background-color: #f6f9fa;
+}
+.search_result .item_list {
+  margin-bottom: 5%;
+}
+.search_result .item_list .list_title {
+  color: #707070;
+  font-size: calc(5px + 1vw);
+  font-weight: bold;
+}
+.search_result .item_list .item_container {
+  grid-auto-rows: auto;
+}
+.search_result .item_list .item_container .item .thumbnail {
+  height: 175px;
 }
 
 /*# sourceMappingURL=index.css.map */

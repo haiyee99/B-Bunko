@@ -4,41 +4,7 @@
 
 .page_index{
 	background-color: $color_secondary;
-	padding: 2.5% 10%;
-	padding-bottom: 5%;
-
-	.search_form{
-		display: grid;
-		grid-template-columns: 8fr 2fr;
-		grid-column-gap: 5%; 
-
-		.input_container{
-			border-bottom: 1px solid $color_text;
-			.fas{ color: $color_text; cursor: pointer; }
-			input[type="text"]{
-				background-color: $color_secondary;
-				border: none;
-
-				width: 95%;
-				padding: 0.75% 0;
-				margin-left: 1.25%;
-				font-size: $size_custom_5;
-			}
-			input[type="text"]:focus{ outline-width: 0; }
-		}
-
-		select{
-			background-color: $color_secondary;
-			border: none;
-			border-bottom: 1px solid $color_text;
-
-			padding: 0.75% 0;
-			font-size: $size_custom_5;
-			color: $color_text;
-		}
-		select:invalid{ color: gray; }
-		select:focus{ outline-width: 0; }
-	}
+	@extend %page_padding;
 
 	.notice_board{
 		height: 200px;
@@ -193,5 +159,25 @@
 	.thumbnail_container{ 
 		@extend %image_cover; 
 		background-image: url("../img/pikachu.jpg");
+	}
+}
+
+.search_result{
+	background-color: $color_secondary;
+	@extend %page_padding;
+
+	.item_list{
+		margin-bottom: 5%;
+		.list_title{ 
+			color: $color_text;
+			font-size: $size_custom_5; 
+			font-weight: bold; 
+		}
+		.item_container{
+			grid-auto-rows: auto;
+			.item{
+				.thumbnail{ height: 175px; }
+			}
+		}
 	}
 }
