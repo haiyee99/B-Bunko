@@ -12,7 +12,7 @@
 			<div class="form">
 				<a href="./index.jsp" class="form_icon"><img href="#"></a>
 				<div class="switch_form_text">Already have an account? <a href="./login.jsp" class="link_color">Sign In</a></div>
-				<form class="loginForm" action="#">
+				<form class="loginForm" action="utility/doRegister.jsp">
 					<div class="input_container">
 						<div class="label">Username</div>
 						<input type="text" name="user_name">
