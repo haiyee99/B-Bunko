@@ -17,9 +17,9 @@
 <%	
 	// Uncomment this: 
 
-	// Class.forName(DRIVER);
-	// connection = DriverManager.getConnection(DBURL, USER, PASS);
-	// statement = connection.createStatement();
+	Class.forName(DRIVER);
+	connection = DriverManager.getConnection(DBURL, USER, PASS);
+	//statement = connection.createStatement();
 %>
 
 <!-- 
