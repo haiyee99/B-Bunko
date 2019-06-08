@@ -8,28 +8,28 @@
     String agree = request.getParameter("user_terms"); //kalo ga dicentang, null. kalo dicentang, on
 
     if(name.equals("")){
-        out.println("nama kosong");
-        //response.sendRedirect("../register.jsp?err=1");
+        //out.println("nama kosong");
+        response.sendRedirect("../register.jsp?err=1");
     }
     else if(email.equals("")){
-        out.printlnt("email kosong");
-        //response.sendRedirect("../register.jsp?err=2");
+        //out.println("email kosong");
+        response.sendRedirect("../register.jsp?err=2");
     }
     else if(password.equals("") || confPassword.equals("")){
-        out.println("password kosong");
-        //response.sendRedirect("../register.jsp?err=3");
+        //out.println("password kosong");
+        response.sendRedirect("../register.jsp?err=3");
     }
     else if(!password.equals(confPassword)){
-        out.println("password beda");
-        //response.sendRedirect("../register.jsp?err=4");
+        //out.println("password beda");
+        response.sendRedirect("../register.jsp?err=4");
     }
     else if(password.length() < 8){
-        out.println("password length < 8");
-        //response.sendRedirect("../register.jsp?err=5");
+        //out.println("password length < 8");
+        response.sendRedirect("../register.jsp?err=5");
     }
     else if(agree == null){
-        out.println("agree tidak null");
-        //response.sendRedirect("../register.jsp?err=6");
+        //out.println("agree tidak null");
+        response.sendRedirect("../register.jsp?err=6");
     }
     else{
         //cek email yang ada di database
@@ -38,8 +38,8 @@
         ResultSet rs = stCheck.executeQuery(emailCheck);
 
         if(rs.next()){
-            out.println("email udh ada di database");
-            //response.sendRedirect("../register.jsp?err=7");
+            //out.println("email udh ada di database");
+            response.sendRedirect("../register.jsp?err=7");
         }
         else{
             //masukkin ke database
@@ -52,8 +52,8 @@
 
             stInsert.executeUpdate();
 
-            out.println("register success");
-            //response.sendRedirect("../login.jsp");
+            //out.println("register success");
+            response.sendRedirect("../login.jsp");
         }
     }
 %>
