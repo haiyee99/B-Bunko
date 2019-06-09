@@ -1,1 +1,1 @@
-# Manganone
+# B-文庫
