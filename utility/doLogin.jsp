@@ -10,7 +10,7 @@
         response.sendRedirect("../login.jsp?err=1");
     }
     else if(password.equals("")){
-        out.println("password is empty");
+        //out.println("password is empty");
         response.sendRedirect("../login.jsp?err=2");
     }
     else{
