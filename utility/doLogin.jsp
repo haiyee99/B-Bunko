@@ -20,8 +20,10 @@
 
         if(rs.next()){
             int user_id = rs.getInt("user_id");
+            String user_name = rs.getString("user_name");
 
             session.setAttribute("user_id", user_id+"");
+            session.setAttribute("user_name", user_name);
 
             if(remember != null){
                 if(remember.equals("on")){
