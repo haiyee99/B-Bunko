@@ -41,6 +41,36 @@
 						<input type="checkbox" name="user_remember">
 						Remember me
 					</div>
+					<%
+						String error = request.getParameter("err");
+
+						if(error != null){
+							%>
+								<div class="input_container">
+									<%
+										if(error.equals("1")){
+											//email is empty
+											%>
+												Email must be filled
+											<%
+										}
+										else if(error.equals("2")){
+											//password is empty
+											%>
+												Password must be filled
+											<%
+										}
+										else if(error.equals("3")){
+											//incorrect password
+											%>
+												Incorrect password
+											<%
+										}
+									%>
+								</div>
+							<%
+						}
+					%>
 					<div class="input_container">
 						<input type="submit" class="button button_2" value="SIGN IN">
 					</div>
