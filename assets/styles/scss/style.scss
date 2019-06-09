@@ -129,6 +129,23 @@ footer{
 	color: $color_secondary;
 	box-shadow: 0 0 2.5px 0 $color_ternary;
 }
+.button_yellow{
+	background-color: $yellow;
+	color: $black;
+}
+.button_green{
+	background-color: $green;
+	color: $white;
+}
+.button_red{
+	background-color: $red;
+	color: $white;
+}
+.button_red_invert{
+	background-color: $white;
+	color: $red;
+	border: 1px solid $red;
+}
 .disableButton{ 
 	opacity: 0.5; 
 	pointer-events: none; 
@@ -250,3 +267,44 @@ footer{
 }
 
 .link_color{ color: $color_primary; }
+
+.custom_radio_container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin: 6px 0;
+	cursor: pointer;
+	user-select: none;
+
+	input{
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+.checkmark {
+	position: absolute;
+	top: 0; left: 0;
+	height: 17px; width: 17px;
+	border-radius: 50%;
+	border: 2px solid $color_primary;
+}
+
+.custom_radio_container:hover input ~ .checkmark{ background-color: #444; }
+.custom_radio_container input:checked ~ .checkmark { background-color: $white; }
+
+.checkmark:after {
+	content: "";
+	display: none;
+	position: absolute;
+}
+
+.custom_radio_container input:checked ~ .checkmark:after{ display: block; }
+.custom_radio_container .checkmark:after {
+ 	top: 50%; left: 50%;
+ 	transform: translate(-45%, -55%);
+	width: 10px; height: 10px;
+	border-radius: 50%;
+	background: $color_primary;
+}

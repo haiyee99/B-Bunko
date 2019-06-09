@@ -148,6 +148,27 @@ footer {
   box-shadow: 0 0 2.5px 0 #6ba0fe;
 }
 
+.button_yellow {
+  background-color: #ffad1e;
+  color: #000000;
+}
+
+.button_green {
+  background-color: #4bceaf;
+  color: #ffffff;
+}
+
+.button_red {
+  background-color: #f1637e;
+  color: #ffffff;
+}
+
+.button_red_invert {
+  background-color: #ffffff;
+  color: #f1637e;
+  border: 1px solid #f1637e;
+}
+
 .disableButton {
   opacity: 0.5;
   pointer-events: none;
@@ -294,6 +315,58 @@ footer {
 
 .link_color {
   color: #34c5ff;
+}
+
+.custom_radio_container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin: 6px 0;
+  cursor: pointer;
+  user-select: none;
+}
+.custom_radio_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  border: 2px solid #34c5ff;
+}
+
+.custom_radio_container:hover input ~ .checkmark {
+  background-color: #444;
+}
+
+.custom_radio_container input:checked ~ .checkmark {
+  background-color: #ffffff;
+}
+
+.checkmark:after {
+  content: "";
+  display: none;
+  position: absolute;
+}
+
+.custom_radio_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom_radio_container .checkmark:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -55%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #34c5ff;
 }
 
 /*# sourceMappingURL=style.css.map */
