@@ -42,16 +42,12 @@
 			<div class="item_list">
 				<div class="list_title">SHOWING <%= search_result.size() %> RESULT</div>
 				<div class="item_container col5_eq"> <%
-					for(int i = 0; i < search_result.size(); ++i){ 
-						Book curr = search_result.get(i); 
-						String curr_title = curr.title;
-						Integer curr_volume = curr.volume;
-						String curr_thumbnail = curr.thumbnail; %>
+					for(int i = 0; i < search_result.size(); ++i){ %>
 						<a class="item" href="./search_result.jsp?id=<%= search_result.get(i).id %>&search_key=<%= search_key %>&search_category=<%= search_category %>">
-							<div class="thumbnail" style='background-image:url(<%=curr_thumbnail%>);'></div>
+							<div class="thumbnail" style='background-image:url(<%=search_result.get(i).thumbnail%>);'></div>
 							<div class="label">
-								<div class="item_label"><%=curr_title%></div>
-								<div class="volume_label">Volume <%=curr_volume%></div>
+								<div class="item_label"><%=search_result.get(i).title.length() > 40? search_result.get(i).title.substring(0,40)+"..." : search_result.get(i).title%></div>
+								<div class="volume_label">Volume <%=search_result.get(i).volume%></div>
 							</div>
 						</a> <%
 					} %>

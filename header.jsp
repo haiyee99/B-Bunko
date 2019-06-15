@@ -18,8 +18,12 @@
 					<a href="./login.jsp" class="button button_1">SIGN IN</a>
 					<a href="./register.jsp" class="button button_2">SIGN UP</a>
 				<% } else { %>
-					<span class="logged_msg">Welcome, <%= username%></span>
-					<span class="logged_msg"> <a href="utility/doLogout.jsp">Logout</a> </span>
+					<span class="logged_msg">Welcome, <%= username%>
+						<div class="ddl_logged">
+								<a href="transaction_history.jsp">Transaction</a>
+								<a href="utility/doLogout.jsp">Logout</a>
+						</div>
+					</span>
 					<div class="user_img"><%= username.charAt(0) %></div>
 				<% } %>
 			</div>

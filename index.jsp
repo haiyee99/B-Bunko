@@ -10,7 +10,6 @@
 		<%@ page import="java.util.Vector" %>
 		<%@ include file="./model/CustomClass.jsp" %>
 		<%@ include file="./model/Database.jsp" %>
-
 		<%
 			String id = request.getParameter("id");
 			Boolean hasId = (id != null);

@@ -16,6 +16,7 @@
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   font-family: Oxygen;
   color: #707070;
@@ -23,6 +24,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  background-color: #f6f9fa;
 }
 
 a {
@@ -100,6 +102,21 @@ a {
 
 .navbar .nav_content .nav_content_wrapper .nav_acc .logged_msg {
   margin-right: 5%;
+  position: relative;
+}
+
+.navbar .nav_content .nav_content_wrapper .nav_acc .logged_msg .ddl_logged {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10% 90% 10% 10%;
+  margin-top: 20%;
+  opacity: 0;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.navbar .nav_content .nav_content_wrapper .nav_acc .logged_msg .ddl_logged a {
+  display: block;
 }
 
 .navbar .nav_content .nav_content_wrapper .nav_acc .user_img {
@@ -119,6 +136,10 @@ a {
   background-image: -webkit-gradient(linear, left top, right top, from(#34c5ff), to(#6ba0fe));
   background-image: linear-gradient(to right, #34c5ff, #6ba0fe);
   border-radius: 5px;
+}
+
+.navbar .nav_content .nav_content_wrapper .nav_acc:hover .ddl_logged {
+  opacity: 1;
 }
 
 .header_search_form {
@@ -226,6 +247,12 @@ footer {
   background-color: #ffffff;
   color: #f1637e;
   border: 1px solid #f1637e;
+}
+
+.button_blue_invert {
+  background-color: #ffffff;
+  color: #0babfe;
+  border: 1px solid #0babfe;
 }
 
 .disableButton {
@@ -346,6 +373,7 @@ footer {
 }
 
 .item_list .item_container .item .label {
+  background-color: #ffffff;
   padding: 5%;
 }
 

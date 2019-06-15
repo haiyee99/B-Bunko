@@ -10,7 +10,7 @@
         String _sample = "";
         String _series = "";
         Book book = null;
-        query = "SELECT * FROM products WHERE product_id = " + id;
+        query = "SELECT * FROM products WHERE product_id = " + _id;
         result = statement.executeQuery(query);
         if(result.next()){
             _title = result.getString(2);
@@ -33,7 +33,7 @@
         while(result.next()){
             _id = result.getInt(1);
             _title = result.getString(2);
-                _volume = result.getInt(3);
+            _volume = result.getInt(3);
             _thumbnail = result.getString(4);
             series.add(new Book(_id, _title, _volume, _thumbnail));
         }
@@ -93,8 +93,8 @@
                         </div>
                     </div>
                     <div class="button_wrapper">
-                        <a class="button button_1">FREE SAMPLE</a>
-                        <a class="button button_2">BUY NOW</a>
+                        <a class="button button_1" href="<%= book.sample%>" target="_blank">FREE SAMPLE</a>
+                        <a class="button button_2" href="payment_confirmation.jsp?id=<%= book.id%>">BUY NOW</a>
                     </div>
                 </div>
                 <div class="manga_series item_list" id="list_series">

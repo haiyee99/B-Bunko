@@ -58,99 +58,79 @@
 
 	.page_content{
 		display: grid;
-		//grid-template-columns: 11fr 28fr 18fr;
-		grid-template-columns: 1fr 1fr;
 		grid-row-gap: 10px;
-		grid-template-areas: "payment_detail payment_summary"
-							 "delivery_location delivery_location"
-							 "button_wrapper button_wrapper";
 
+		
 		div .grid_title{ font-size: $size_custom_5; color: $color_primary; padding: 1.25% 0; }
-
-		.payment_detail{ grid-area: payment_detail; }
-		.payment_summary{ grid-area: payment_summary; }
-		.delivery_location{ grid-area: delivery_location; }
-		.button_wrapper{ grid-area: button_wrapper; }
 
 		.payment_detail .grid_content{
 			display: grid;
-			grid-template-columns: 2fr 5fr;
+			grid-template-columns: 1.5fr 6fr;
 			.item_list{ 
 				display: inline-block; 
 				width: 90%; 
-				.item .thumbnail{ height: 150px; }
+				.item_container{padding: 0;}
+				.thumbnail{height: 250px;}
 			}
-			.form_wrapper .form_content{
-				display: inline-block;
-				background-color: $white;
-				height: 100%;
-				width: 60%;
-				box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
-				border-radius: 2.5px;
-				padding: 0 2.5%;
+			.form_wrapper{
+				.form_content{
+					grid-template-rows: 50% 50%;
+					background-color: $white;
+					height: 100%;
+					width: 50%;
+					box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
+					border-radius: 2.5px;
 
-				.input_container:first-child{ padding-top: 5%; }
-				.input_container{
-					padding-bottom: 5%;
-
-					input[type="number"]{ 
-						width: 15%;
-						padding: 1.25%;
-						margin-left: 5%;
-						border-radius: 2.5px;
-						border: 1px solid $color_primary;
+					div{padding: 0 2%;}
+					.payment_summary .grid_content{
+						display: inline-block;
+						.grid_content_title, .grid_content_subtitle{ padding: 5% 0 2.5% 0; font-weight: bold; }
+						.grid_content_title{ font-size: $size_custom_6; }
+						.grid_content_subtitle{ font-size: $size_custom_5; }
+						.payment_summary_list{
+							.list_entry{ display: grid; grid-template-columns: 70% 50%; padding: 1.25% 0; }
+						}
+						.total_price{ font-size: $size_custom_6; }
+					}
+	
+					.input_container:first-child{ padding-top: 2%; }
+					.input_container{
+						padding-bottom: 2%;
+	
+						input[type="number"]{ 
+							width: 15%;
+							padding: 1.25%;
+							margin-left: 5%;
+							border-radius: 2.5px;
+							border: 1px solid $color_primary;
+						}
 					}
 				}
 			}
 		}
-		.payment_summary .grid_content{
-			display: inline-block;
-			float: right;
-			width: 60%; height: 100%;
-			background-color: $white;
-			border-radius: 2.5px;
-			box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
-			padding: 0 5%;
-
-			.grid_content_title, .grid_content_subtitle{ padding: 5% 0 2.5% 0; font-weight: bold; }
-			.grid_content_title{ font-size: $size_custom_6; }
-			.grid_content_subtitle{ font-size: $size_custom_5; }
-			.payment_summary_list{
-				.list_entry{ display: grid; grid-template-columns: 50% 50%; padding: 1.25% 0; }
-			}
-			.total_price{ font-size: $size_custom_6; }
-		}
-		.delivery_location .grid_content{
-			display: grid;
-			grid-template-columns: 75% 25%;
+		
+		.delivery_location{
 			background-color: $white;
 			border-radius: 2.5px;
 			box-shadow: 3px 3px 10px 0px rgba(136,136,136,1);
 			padding: 1.5% 5%;
+			height: 200px;
 
-			.content_left{
-				.grid_content_key{ font-size: $size_custom_4; font-weight: bold; }
-				.grid_content_value{ font-size: $size_custom_4; margin-top: 1.25%; line-height: 150%; }
+			textarea{
+				font-family: inherit;
+				font-size: 18px;
+				font-weight: 200;
+				width: 100%;
+				height: 70%;
 			}
-			.content_right{
-				position: relative;
-				.button{ 
-					padding: 2.5% 10.5%; 
-					font-size: $size_custom_3;
-					color: $color_text;
-					font-weight: bold;
 
-					position: absolute;
-					top: 50%; right: 10%;
-					transform: translateY(-50%);
-				}
-			}
 		}
 
 		.button_wrapper{
 			padding-top: 1%;
 			.button_2{ padding: 1% 4.5%; }
-			.button_red_invert{ padding: 0.8% 2.5%; margin-left: 1.25%; }
+			.button_red_invert{ padding: 0.8% 2.5%;}
+			a{margin-left: 1.25%;}
 		}
 	}
 }
