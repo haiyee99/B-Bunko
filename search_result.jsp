@@ -10,53 +10,45 @@
 		<%@ page import="java.util.Vector" %>
 		<%@ include file="./model/CustomClass.jsp" %>
 		<%@ include file="./model/Database.jsp" %>
+		<% 
+			String id = request.getParameter("id");
+			Boolean hasId = (id != null);
 
-		<% /*1.0 Get Parameters from URL
 			String search_key = request.getParameter("search_key");
 			String search_category = request.getParameter("search_category");
-			*/ %>
 
-		<% 
-			Vector<Book> result = new Vector<Book>();
-			
-			// Add Dummy Book (Delete this)
-			for(int i = 0; i < 12; ++i){
-				Book curr = new Book("Pikadut The Manga", i+1, "./assets/img/pikachu.jpg");
-				result.add(curr);
+			Vector<Book> search_result = new Vector<Book>();
+
+			Integer _id = 0;
+			String _title = "";
+			Integer _volume = 0;
+			String _thumbnail = "";
+
+			String query = "SELECT * FROM products WHERE product_title LIKE '%"+search_key+"%' AND product_category = '"+search_category+"'";
+			ResultSet result = statement.executeQuery(query);
+
+			while(result.next()){
+				_id = result.getInt(1);
+				_title = result.getString(2);
+				 _volume = result.getInt(3);
+				_thumbnail = result.getString(4);
+				search_result.add(new Book(_id, _title, _volume, _thumbnail));
 			}
-
-			/*1.1 Fetch data from database
-				String query = "select * from database where ... like *search_key* and ... = search_category";
-				ResultSet result = statement.executeQuery(query);
-			*/
-
-			/*1.2 Add to result Vector
-				while(result.next()){
-					String title = result.getString("column_name");
-					Integer volume = result.getInt("column_name");
-					String thumbnail = result.getString("column_name");
-
-					Book curr = new Book(title, volume, thumbnail);
-					result.add(curr);
-				}
-			*/
-
-			Integer result_count = result.size(); 
 		%>
 
 		<div class="search_result">
 			<%@ include file="./header.jsp" %>
 
 			<div class="item_list">
-				<div class="list_title">SHOWING <%=result_count%> RESULT</div>
+				<div class="list_title">SHOWING <%= search_result.size() %> RESULT</div>
 				<div class="item_container col5_eq"> <%
-					for(int i = 0; i < result_count; ++i){ 
-						Book curr = result.get(i); 
+					for(int i = 0; i < search_result.size(); ++i){ 
+						Book curr = search_result.get(i); 
 						String curr_title = curr.title;
 						Integer curr_volume = curr.volume;
 						String curr_thumbnail = curr.thumbnail; %>
-						<a class="item" href="./index.jsp?id=1">
-							<div class="thumbnail" style='background-image=url(<%=curr_thumbnail%>);'></div>
+						<a class="item" href="./search_result.jsp?id=<%= search_result.get(i).id %>&search_key=<%= search_key %>&search_category=<%= search_category %>">
+							<div class="thumbnail" style='background-image:url(<%=curr_thumbnail%>);'></div>
 							<div class="label">
 								<div class="item_label"><%=curr_title%></div>
 								<div class="volume_label">Volume <%=curr_volume%></div>
@@ -65,8 +57,8 @@
 					} %>
 				</div>
 			</div>
-
 			<%@ include file="./footer.jsp" %>
 		</div>
+		<%@ include file="./popup.jsp" %>
 	</body>
 </html>

@@ -50,7 +50,6 @@
 }
 
 .manga_detail_popup{
-	display: block;
 	position: fixed;
 	top: 0; left: 0;
 
@@ -62,7 +61,7 @@
 
 	background-color: $color_secondary;
 	overflow: hidden;
-
+	animation: slideFromRight .5s;
 
 	.detail_container{
 		$padding: 2.5%;

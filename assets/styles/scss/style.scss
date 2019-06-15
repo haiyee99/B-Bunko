@@ -323,3 +323,13 @@ footer{
 	border-radius: 50%;
 	background: $color_primary;
 }
+
+@keyframes slideFromRight{
+	0%{
+		transform: translateX(100vw);
+	}
+	100%{
+	transform: translateX(0);
+  	}
+}
+  

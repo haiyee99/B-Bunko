@@ -29,11 +29,11 @@
 <form class="section header_search_form" id="search_form" action="./search_result.jsp">
 	<div class="input_container">
 		<i class="fas fa-search" onclick="submit_search_form();"></i>
-		<input type="text" name="search_key" placeholder="Search">
+		<input type="text" name="search_key" placeholder="Search" value='<%= (request.getParameter("search_key") != null) ? request.getParameter("search_key") : "" %>'>
 	</div>
 	<select name="search_category" required>
 		<option value="" disabled selected hidden>Category</option>
-		<option value="1">Manga</option>
-		<option value="2">Light Novel</option>
+		<option value="MG">Manga</option>
+		<option value="LN">Light Novel</option>
 	</select>
 </form>
