@@ -27,8 +27,15 @@
             book = new Book(_id, _title, _volume, _thumbnail, _author, _rating, _price, _publisher, _genres, _synopsis, _sample, _series);
         }
 
+        int currPage = 1;
+        if(request.getParameter("page") != null)
+            currPage = Integer.parseInt(request.getParameter("page"));
+
+        int perPage = 5;
+        int offSet = (currPage - 1) * perPage;
+
         Vector<Book> series = new Vector<Book>();
-        query = "SELECT * FROM products WHERE product_series = '"+_series+"' LIMIT "+0+","+5+"";
+        query = "SELECT * FROM products WHERE product_series = '"+_series+"' LIMIT "+offSet+","+perPage+"";
         result = statement.executeQuery(query);
         while(result.next()){
             _id = result.getInt(1);
@@ -109,8 +116,26 @@
                             </div>
                         </a>
                         <%}%>
-                        <span class="next"><i class="fas fa-chevron-right centerize"></i></span>
-                        <span class="prev"><i class="fas fa-chevron-left centerize"></i></span>
+                        <%
+                                query = "SELECT COUNT(*) FROM products WHERE product_series = '" + book.series +"'";
+                                result = statement.executeQuery(query);
+
+                                int totalBook = 0;
+                                int totalPage = 0;
+
+                                if(result.next()){
+                                    totalBook = result.getInt(1);
+                                    totalPage = totalBook/perPage;
+                                }
+
+                                if(totalBook%perPage != 0)
+                                    totalPage++;
+                                
+                                int next = (currPage) < totalPage ? (currPage+1) : currPage ;
+                                int prev = (currPage) > 1  ? (currPage-1) : currPage;
+                        %>
+                        <a class="next" href='<%= seriesUrl+"id="+ book.id +"&page="+next %>' style='display: <%= (currPage==next) ? "none" : "block" %>;'><i class="fas fa-chevron-right centerize"></i></a>
+                        <a class="prev" href='<%= seriesUrl+"id="+ book.id +"&page="+prev %>' style='display: <%= (currPage==prev) ? "none" : "block" %>;'><i class="fas fa-chevron-left centerize"></i></a>
                     </div>
                 </div>
             </div>
