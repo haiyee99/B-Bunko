@@ -5,7 +5,7 @@
 
     Cookie[] cookies = request.getCookies();
 
-    for(int i=0; i<cookies.length(); i++){
+    for(int i=0; i<cookies.length; i++){
         if(cookies[i].getName().equals("id")){
             cookies[i].setMaxAge(0);
             cookies[i].setPath("/");

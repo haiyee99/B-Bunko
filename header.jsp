@@ -3,11 +3,11 @@
 	Boolean isLogged = false;
 	String username = "";
 
-	String user_id = session.getAttribute("user_id");
+	String user_id = (String) session.getAttribute("user_id");
 
 	if(user_id != null){
 		isLogged = true;
-		username = session.getAttribute("user_name");
+		username = (String) session.getAttribute("user_name");
 	}
 %>
 
