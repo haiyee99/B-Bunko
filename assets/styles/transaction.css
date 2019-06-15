@@ -2,13 +2,15 @@
   font-family: Oxygen;
   src: url("../font/Oxygen-Light.ttf");
 }
+
 @font-face {
   font-family: Oxygen;
   src: url("../font/Oxygen-Regular.ttf");
   font-weight: 200;
 }
+
 .page_transaction {
-  padding: 2.5% 10%;
+  padding: .5% 10%;
   padding-bottom: 5%;
 }
 
@@ -16,39 +18,50 @@
   background-color: #f6f9fa;
   min-height: 82.5vh;
 }
+
 .page_transaction .transaction_history_container {
   background-color: #ffffff;
   padding: 1.25% 2.5%;
 }
+
 .page_transaction .transaction_history_container .container_title {
   font-size: calc(5px + 1.25vw);
   color: #34c5ff;
   font-weight: bold;
 }
+
 .page_transaction .transaction_history_container .container_content {
   padding: 1.75% 5%;
 }
+
 .page_transaction .transaction_history_container .container_content .content_header, .page_transaction .transaction_history_container .container_content .content_entry {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 7fr 9fr 11fr 6fr 9fr;
+  -ms-grid-columns: 7fr 9fr 11fr 6fr 9fr;
+      grid-template-columns: 7fr 9fr 11fr 6fr 9fr;
   grid-column-gap: 2.5%;
   padding-bottom: 1.25%;
 }
+
 .page_transaction .transaction_history_container .container_content .content_header {
   font-weight: bold;
 }
+
 .page_transaction .transaction_history_container .container_content .content_entry {
   padding: 1.25% 0;
 }
+
 .page_transaction .transaction_history_container .container_content .content_entry .entry_status .button {
   display: inline-block;
   width: 50%;
   padding: 1.5% 5%;
   font-weight: bold;
 }
+
 .page_transaction .transaction_history_container .container_content .content_entry .entry_invoice a {
   color: #34c5ff;
 }
+
 .page_transaction .transaction_history_container .container_content .content_entry .entry_invoice a:hover {
   text-decoration: underline;
 }
@@ -58,61 +71,90 @@
   min-height: 100vh;
   padding: 0 5%;
 }
+
 .page_payment_confirmation .page_title {
   color: #000000;
   font-size: calc(5px + 1.5vw);
   font-weight: bold;
   padding: 2.5% 0 1.25% 0;
 }
+
 .page_payment_confirmation .page_content {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   grid-row-gap: 10px;
-  grid-template-areas: "payment_detail payment_summary" "delivery_location delivery_location" "button_wrapper button_wrapper";
+      grid-template-areas: "payment_detail payment_summary" "delivery_location delivery_location" "button_wrapper button_wrapper";
 }
+
 .page_payment_confirmation .page_content div .grid_title {
   font-size: calc(5px + 1vw);
   color: #34c5ff;
   padding: 1.25% 0;
 }
+
 .page_payment_confirmation .page_content .payment_detail {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: payment_detail;
 }
+
 .page_payment_confirmation .page_content .payment_summary {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: payment_summary;
 }
+
 .page_payment_confirmation .page_content .delivery_location {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: delivery_location;
 }
+
 .page_payment_confirmation .page_content .button_wrapper {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
   grid-area: button_wrapper;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 2fr 5fr;
+  -ms-grid-columns: 2fr 5fr;
+      grid-template-columns: 2fr 5fr;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .item_list {
   display: inline-block;
   width: 90%;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .item_list .item .thumbnail {
   height: 150px;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .form_wrapper .form_content {
   display: inline-block;
   background-color: #ffffff;
   height: 100%;
   width: 60%;
-  box-shadow: 3px 3px 10px 0px #888888;
+  -webkit-box-shadow: 3px 3px 10px 0px #888888;
+          box-shadow: 3px 3px 10px 0px #888888;
   border-radius: 2.5px;
   padding: 0 2.5%;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .form_wrapper .form_content .input_container:first-child {
   padding-top: 5%;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .form_wrapper .form_content .input_container {
   padding-bottom: 5%;
 }
+
 .page_payment_confirmation .page_content .payment_detail .grid_content .form_wrapper .form_content .input_container input[type="number"] {
   width: 15%;
   padding: 1.25%;
@@ -120,6 +162,7 @@
   border-radius: 2.5px;
   border: 1px solid #34c5ff;
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content {
   display: inline-block;
   float: right;
@@ -127,47 +170,63 @@
   height: 100%;
   background-color: #ffffff;
   border-radius: 2.5px;
-  box-shadow: 3px 3px 10px 0px #888888;
+  -webkit-box-shadow: 3px 3px 10px 0px #888888;
+          box-shadow: 3px 3px 10px 0px #888888;
   padding: 0 5%;
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content .grid_content_title, .page_payment_confirmation .page_content .payment_summary .grid_content .grid_content_subtitle {
   padding: 5% 0 2.5% 0;
   font-weight: bold;
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content .grid_content_title {
   font-size: calc(5px + 1.25vw);
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content .grid_content_subtitle {
   font-size: calc(5px + 1vw);
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content .payment_summary_list .list_entry {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 50% 50%;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
   padding: 1.25% 0;
 }
+
 .page_payment_confirmation .page_content .payment_summary .grid_content .total_price {
   font-size: calc(5px + 1.25vw);
 }
+
 .page_payment_confirmation .page_content .delivery_location .grid_content {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 75% 25%;
+  -ms-grid-columns: 75% 25%;
+      grid-template-columns: 75% 25%;
   background-color: #ffffff;
   border-radius: 2.5px;
-  box-shadow: 3px 3px 10px 0px #888888;
+  -webkit-box-shadow: 3px 3px 10px 0px #888888;
+          box-shadow: 3px 3px 10px 0px #888888;
   padding: 1.5% 5%;
 }
+
 .page_payment_confirmation .page_content .delivery_location .grid_content .content_left .grid_content_key {
   font-size: calc(5px + 0.85vw);
   font-weight: bold;
 }
+
 .page_payment_confirmation .page_content .delivery_location .grid_content .content_left .grid_content_value {
   font-size: calc(5px + 0.85vw);
   margin-top: 1.25%;
   line-height: 150%;
 }
+
 .page_payment_confirmation .page_content .delivery_location .grid_content .content_right {
   position: relative;
 }
+
 .page_payment_confirmation .page_content .delivery_location .grid_content .content_right .button {
   padding: 2.5% 10.5%;
   font-size: calc(5px + 0.5vw);
@@ -176,17 +235,20 @@
   position: absolute;
   top: 50%;
   right: 10%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
+
 .page_payment_confirmation .page_content .button_wrapper {
   padding-top: 1%;
 }
+
 .page_payment_confirmation .page_content .button_wrapper .button_2 {
   padding: 1% 4.5%;
 }
+
 .page_payment_confirmation .page_content .button_wrapper .button_red_invert {
   padding: 0.8% 2.5%;
   margin-left: 1.25%;
 }
-
 /*# sourceMappingURL=transaction.css.map */

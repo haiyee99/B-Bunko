@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Manganone</title>
+		<title>B-Bunko</title>
 		<link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
 		<link rel="stylesheet" type="text/css" href="./assets/styles/login.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
@@ -30,7 +30,7 @@
 
 						if(error != null){
 							%>
-								<div class="input_container">
+								<div class="errMsg">
 									<%
 										if(error.equals("1")){
 											//email is empty

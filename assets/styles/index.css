@@ -2,11 +2,13 @@
   font-family: Oxygen;
   src: url("../font/Oxygen-Light.ttf");
 }
+
 @font-face {
   font-family: Oxygen;
   src: url("../font/Oxygen-Regular.ttf");
   font-weight: 200;
 }
+
 .page_index .notice_board, .page_index .editor_picks .picks_container .pick, .manga_detail_popup .thumbnail_container {
   background-position: center;
   background-repeat: no-repeat;
@@ -14,36 +16,51 @@
 }
 
 .page_index, .search_result {
-  padding: 2.5% 10%;
+  padding: .5% 10%;
   padding-bottom: 5%;
 }
 
 .page_index {
   background-color: #f6f9fa;
 }
+
 .page_index .notice_board {
   height: 200px;
   border-radius: 2.5px;
-  background-position: 0 10%;
-  background-image: url("../img/notice_board_wallpaper.jpg");
+  background-position: 0 60%;
+  background-image: url("../img/resize.jpg");
 }
+
+.page_index .notice_board div {
+  color: #ffffff;
+  font-size: 40px;
+  position: relative;
+  top: 10%;
+  left: 2%;
+}
+
 .page_index .item_list .list_title {
   font-size: calc(7.5px + 1.75vw);
   color: #34c5ff;
   padding: 1.25% 0;
 }
+
 .page_index .editor_picks .picks_container {
+  display: -ms-grid;
   display: grid;
   grid-column-gap: 1.25%;
 }
+
 .page_index .editor_picks .picks_container .pick {
   height: 250px;
 }
+
 .page_index .editor_picks .picks_container .pick:first-of-type {
-  background-image: url("../img/pokeball.jpg");
+  background-image: url("../img/editor.jpg");
 }
+
 .page_index .editor_picks .picks_container .pick:last-of-type {
-  background-image: url("../img/pokeball2.jpg");
+  background-image: url("../img/editor2.jpg");
 }
 
 .manga_detail_popup {
@@ -51,50 +68,67 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 42fr 23fr;
+  -ms-grid-columns: 42fr 23fr;
+      grid-template-columns: 42fr 23fr;
   width: 100vw;
   height: 100vh;
   background-color: #f6f9fa;
-  overflow: scroll;
+  overflow: hidden;
 }
+
 .manga_detail_popup .detail_container {
   width: 95%;
   height: 95%;
   padding: 2.5%;
 }
+
 .manga_detail_popup .detail_container .close_btn .fa-times {
   cursor: pointer;
   font-size: calc(5px + 1.25vw);
 }
+
 .manga_detail_popup .detail_container .manga_detail {
+  display: -ms-grid;
   display: grid;
   padding: 0 5%;
 }
+
 .manga_detail_popup .detail_container .manga_detail div {
   padding: 0.5% 0;
 }
+
 .manga_detail_popup .detail_container .manga_detail .title_author_star {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 5fr 2fr;
+  -ms-grid-columns: 5fr 2fr;
+      grid-template-columns: 5fr 2fr;
 }
+
 .manga_detail_popup .detail_container .manga_detail .publisher_genre {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 2fr 5fr;
+  -ms-grid-columns: 2fr 5fr;
+      grid-template-columns: 2fr 5fr;
 }
+
 .manga_detail_popup .detail_container .manga_detail .star_wrapper {
   padding: 0.75% 0;
   font-size: calc(5px + 1.5vw);
 }
+
 .manga_detail_popup .detail_container .manga_detail .star_wrapper .manga_rating {
   margin-left: 2.5%;
   font-size: calc(5px + 1vw);
 }
+
 .manga_detail_popup .detail_container .manga_detail .title_wrapper .cell_title,
 .manga_detail_popup .detail_container .manga_detail .author_wrapper .cell_title,
 .manga_detail_popup .detail_container .manga_detail .price_wrapper .cell_title {
   font-size: calc(5px + 0.75vw);
 }
+
 .manga_detail_popup .detail_container .manga_detail .title_wrapper .cell_value,
 .manga_detail_popup .detail_container .manga_detail .author_wrapper .cell_value,
 .manga_detail_popup .detail_container .manga_detail .price_wrapper .cell_value {
@@ -102,23 +136,28 @@
   color: #000;
   font-weight: bold;
 }
+
 .manga_detail_popup .detail_container .manga_detail .price_wrapper .cell_value {
   color: #34c5ff;
 }
+
 .manga_detail_popup .detail_container .manga_detail .publisher_wrapper .cell_title,
 .manga_detail_popup .detail_container .manga_detail .genre_wrapper .cell_title {
   font-size: calc(5px + 0.5vw);
 }
+
 .manga_detail_popup .detail_container .manga_detail .publisher_wrapper .cell_value,
 .manga_detail_popup .detail_container .manga_detail .genre_wrapper .cell_value {
   font-size: calc(5px + 0.75vw);
   color: #000;
   font-weight: bold;
 }
+
 .manga_detail_popup .detail_container .manga_detail .synopsis_wrapper .cell_title {
   font-size: calc(5px + 1vw);
   font-weight: bold;
 }
+
 .manga_detail_popup .detail_container .manga_detail .synopsis_wrapper .cell_value {
   font-size: calc(5px + 0.75vw);
   text-align: justify;
@@ -126,55 +165,64 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .manga_detail_popup .detail_container .manga_detail .button_wrapper .button {
   width: 17.5%;
   padding: 1% 0;
 }
+
 .manga_detail_popup .detail_container .manga_detail .button_wrapper .button:last-child {
   margin-left: 2.5%;
 }
+
 .manga_detail_popup .detail_container .manga_series .list_title {
   font-size: calc(5px + 1vw);
   font-weight: bold;
   color: #707070;
   padding: 1% 5%;
 }
+
 .manga_detail_popup .detail_container .manga_series .item_container {
   position: relative;
   padding: 0 7.5%;
 }
+
 .manga_detail_popup .detail_container .manga_series .item_container .item .thumbnail {
-  height: 125px;
+  height: 150px;
+  background-position: 0 10%;
 }
+
 .manga_detail_popup .detail_container .manga_series .item_container .item .label .item_label {
   font-size: calc(5px + 0.40vw);
 }
+
 .manga_detail_popup .detail_container .manga_series .item_container .next {
   right: 1.5%;
 }
+
 .manga_detail_popup .detail_container .manga_series .item_container .prev {
   left: 1.5%;
-}
-.manga_detail_popup .thumbnail_container {
-  background-image: url("../img/pikachu.jpg");
 }
 
 .search_result {
   background-color: #f6f9fa;
 }
+
 .search_result .item_list {
   margin-bottom: 5%;
 }
+
 .search_result .item_list .list_title {
   color: #707070;
   font-size: calc(5px + 1vw);
   font-weight: bold;
 }
+
 .search_result .item_list .item_container {
   grid-auto-rows: auto;
 }
+
 .search_result .item_list .item_container .item .thumbnail {
   height: 175px;
 }
-
 /*# sourceMappingURL=index.css.map */

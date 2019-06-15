@@ -12,8 +12,16 @@
 		border-radius: 2.5px;
 
 		@extend %image_cover;
-		background-position: 0 10%; // temporary
-		background-image: url("../img/notice_board_wallpaper.jpg");
+		background-position: 0 60%; // temporary
+		background-image: url("../img/resize.jpg");
+		
+		div{
+			color: $white;
+			font-size: 40px;
+			position: relative;
+			top: 10%;
+			left: 2%;
+		}
 	}
 
 	.item_list{
@@ -35,8 +43,8 @@
 				@extend %image_cover;
 			}
 
-			.pick:first-of-type{ background-image: url("../img/pokeball.jpg"); }
-			.pick:last-of-type{ background-image: url("../img/pokeball2.jpg"); }
+			.pick:first-of-type{ background-image: url("../img/editor.jpg"); }
+			.pick:last-of-type{ background-image: url("../img/editor2.jpg"); }
 		}
 	}
 }
@@ -53,7 +61,7 @@
 	height: 100vh;
 
 	background-color: $color_secondary;
-	overflow: scroll;
+	overflow: hidden;
 
 
 	.detail_container{
@@ -143,7 +151,8 @@
 
 				.item{
 					.thumbnail{
-						height: 125px;
+						height: 150px;
+						background-position: 0 10%;
 					}
 					.label{
 						.item_label{ font-size: $size_custom_2; }
@@ -158,7 +167,6 @@
 
 	.thumbnail_container{ 
 		@extend %image_cover; 
-		background-image: url("../img/pikachu.jpg");
 	}
 }
 

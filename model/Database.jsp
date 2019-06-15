@@ -3,7 +3,7 @@
 <%!
 	// Change PORT, DBNAME if needed
 	final String PORT = "3306";
-	final String DBNAME = "Manganone";
+	final String DBNAME = "b_bunko";
 	final String USER = "root";
 	final String PASS = "";
 
@@ -19,7 +19,7 @@
 
 	Class.forName(DRIVER);
 	connection = DriverManager.getConnection(DBURL, USER, PASS);
-	//statement = connection.createStatement();
+	statement = connection.createStatement();
 %>
 
 <!-- 
