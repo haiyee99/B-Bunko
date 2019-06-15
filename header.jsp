@@ -1,7 +1,14 @@
 <%
 	/*1.0 Check if any user is logged in*/
 	Boolean isLogged = false;
-	String username = "DummyUser";
+	String username = "";
+
+	String user_id = session.getAttribute("user_id");
+
+	if(user_id != null){
+		isLogged = true;
+		username = session.getAttribute("user_name");
+	}
 %>
 
 <header class="navbar">
@@ -20,6 +27,7 @@
 					<a href="./register.jsp" class="button button_2">SIGN UP</a>
 				<% } else { %>
 					<span class="logged_msg">Welcome, <%=username%></span>
+					<span class="logged_msg"> <a href="utility/doLogout.jsp">Logout</a> </span>
 					<img src="#" style="width: 50px; height: 50px; border: 1px solid black;">
 				<% } %>
 			</div>
