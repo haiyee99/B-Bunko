@@ -32,7 +32,7 @@
                     newCookie.setMaxAge(900);
                     newCookie.setPath("/");
                     response.addCookie(newCookie);
-                    out.println("cookies set");
+                    //out.println("cookies set");
                 }
             }
             //out.println("login success");
