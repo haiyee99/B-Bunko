@@ -50,6 +50,9 @@
         if(search_key != null){
             backUrl = seriesUrl = "./search_result.jsp?search_key="+search_key+"&search_category="+search_category+"&";
         }
+        else if(search_category != null){
+            backUrl = seriesUrl = "./items.jsp?category="+category;
+        }
         else{
             backUrl = seriesUrl = "./index.jsp?";
         }

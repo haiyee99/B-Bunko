@@ -2,6 +2,9 @@
 	/*1.0 Check if any user is logged in*/
 	String username = (String) session.getAttribute("user_name");
 	Boolean isLogged = (username != null);
+
+	//check whether from items.jsp or not
+	String category = request.getParameter("category");
 %>
 <header class="navbar">
 	<a href="./index.jsp" class="nav_icon"></a>
@@ -9,8 +12,8 @@
 		<div class="nav_content_wrapper">
 			<div class="nav_link">
 				<div class="nav_link_wrapper">
-					<a href="#">MANGA</a>
-					<a href="#">LIGHT NOVEL</a>
+					<a href="items.jsp?category=MG">MANGA</a>
+					<a href="items.jsp?category=LN">LIGHT NOVEL</a>
 				</div>
 			</div>
 			<div class="nav_acc">
@@ -35,9 +38,34 @@
 		<i class="fas fa-search" onclick="submit_search_form();"></i>
 		<input type="text" name="search_key" placeholder="Search" value='<%= (request.getParameter("search_key") != null) ? request.getParameter("search_key") : "" %>'>
 	</div>
-	<select name="search_category" required>
-		<option value="" disabled selected hidden>Category</option>
-		<option value="MG">Manga</option>
-		<option value="LN">Light Novel</option>
-	</select>
+
+	<%
+		if(category == null){
+			%>
+				<select name="search_category" required>
+					<option value="" disabled selected hidden>Category</option>
+					<option value="MG">Manga</option>
+					<option value="LN">Light Novel</option>
+				</select>
+			<%
+		}
+		else{
+			if(category.equals("LN")){
+				%>	
+					<select name="search_category" required>
+						<option value="" disabled selected hidden>Category</option>
+						<option value="LN" selected>Light Novel</option>
+					</select>
+				<%
+			}
+			else if(category.equals("MG")){
+				%>
+					<select name="search_category" required>
+						<option value="" disabled selected hidden>Category</option>
+						<option value="MG" selected>Manga</option>
+					</select>
+				<%
+			}
+		}
+	%>
 </form>

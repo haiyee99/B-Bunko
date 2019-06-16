@@ -14,8 +14,8 @@
 			String id = request.getParameter("id");
 			Boolean hasId = (id != null);
 
-			String search_key = request.getParameter("search_key");
-			String search_category = request.getParameter("search_category");
+            String search_key = null;
+			String search_category = request.getParameter("category");
 
 			Vector<Book> search_result = new Vector<Book>();
 
@@ -24,7 +24,7 @@
 			Integer _volume = 0;
 			String _thumbnail = "";
 
-			String query = "SELECT * FROM products WHERE product_title LIKE '%"+search_key+"%' AND product_category = '"+search_category+"'";
+			String query = "SELECT * FROM products WHERE product_category = '"+search_category+"' ORDER BY product_title, product_volume";
 			ResultSet result = statement.executeQuery(query);
 
 			while(result.next()){
@@ -40,10 +40,21 @@
 			<%@ include file="./header.jsp" %>
 
 			<div class="item_list">
-				<div class="list_title">SHOWING <%= search_result.size() %> RESULT</div>
+                <%
+                    if(search_category.equals("LN")){
+                        %>
+                            <div class="list_title">SHOWING <%= search_result.size() %> LIGHT NOVEL(S)</div>
+                        <%
+                    }
+                    else if(search_category.equals("MG")){
+                        %>
+                            <div class="list_title">SHOWING <%= search_result.size() %> MANGA(S)</div>
+                        <%
+                    }
+                %>
 				<div class="item_container col5_eq"> <%
 					for(int i = 0; i < search_result.size(); ++i){ %>
-						<a class="item" href="./search_result.jsp?id=<%= search_result.get(i).id %>&search_key=<%= search_key %>&search_category=<%= search_category %>">
+						<a class="item" href="./items.jsp?id=<%= search_result.get(i).id %>&category=<%= search_category %>">
 							<div class="thumbnail" style='background-image:url(<%=search_result.get(i).thumbnail%>);'></div>
 							<div class="label">
 								<div class="item_label"><%=search_result.get(i).title.length() > 40? search_result.get(i).title.substring(0,40)+"..." : search_result.get(i).title%></div>
