@@ -16,7 +16,9 @@
 				if(!isLogged)
                     response.sendRedirect("login.jsp");
 				
+				
                 Integer _trans_id = Integer.parseInt(request.getParameter("trans_id"));
+				String _trans_status = request.getParameter("trans_status");
                 String _title = "";
                 Integer _volume = 0;
                 String _thumbnail = "";
@@ -42,10 +44,10 @@
 		%>
         <form class="page_payment_confirmation" action="utility/modifyTrans.jsp" method="POST">
             <input type="hidden" name="trans_id" value="<%= _trans_id%>">
-			<div class="page_title">Payment Confirmation</div>
+			<div class="page_title">Transaction Detail</div>
 			<div class="page_content">
 				<div class="payment_detail">
-					<div class="grid_title">Payment Detail</div>
+					<div class="grid_title">Books Detail</div>
 					<div class="grid_content">
 						<div class="item_list">
 							<div class="item_container">
@@ -84,11 +86,11 @@
 									<div class="input_container">
 										Payment Method <br> 
 										<label class="custom_radio_container">Bank Transfer
-											<input type="radio" name="purchase_method" value="Bank Transfer" <%= (trans.payment_type.equals("Bank Transfer")) ? "checked" : "" %>> 
+											<input type="radio" name="purchase_method" value="Bank Transfer" <%= (trans.payment_type.equals("Bank Transfer")) ? "checked" : "" %> disabled> 
 											<span class="checkmark"></span>
 										</label>
 										<label class="custom_radio_container">Credit Card
-											<input type="radio" name="purchase_method" value="Credit Card" <%= (trans.payment_type.equals("Credit Card")) ? "checked" : "" %>> 
+											<input type="radio" name="purchase_method" value="Credit Card" <%= (trans.payment_type.equals("Credit Card")) ? "checked" : "" %> disabled> 
 											<span class="checkmark"></span>
 										</label>
 									</div>
@@ -102,8 +104,14 @@
 					<div class="address"><%= trans.address %></div>
 				</div>
 				<div class="button_wrapper">
-                    <input type="submit" class="button button_red_invert" value="CANCEL">
-                    <a href="index.jsp" class="button button_blue_invert">BACK</a>
+					<%
+						if(_trans_status.equals("Pending")){
+							out.print("<input type='submit' class='button button_red_invert'value='CANCEL'>");
+							out.print("<a href='index.jsp' class='button button_blue_invert'>BACK</a>");
+						}
+						else
+							out.print("<a href='index.jsp' class='button button_blue_invert' style='margin:0;'>BACK</a>");
+					%>
 				</div>
 			</div>
 		</form>

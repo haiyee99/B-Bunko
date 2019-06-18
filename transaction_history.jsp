@@ -62,7 +62,7 @@
 								btn_color = "button_green";
 						%>
 						<div class="entry_status"><span class="button <%= btn_color%>"><%= transactions.get(i).trans_status %></span></div>
-						<div class="entry_invoice"><a href="transaction_detail.jsp?trans_id=<%= transactions.get(i).trans_id %>"><%= transactions.get(i).invoice %></a></div>
+						<div class="entry_invoice"><a href="transaction_detail.jsp?trans_id=<%= transactions.get(i).trans_id %>&trans_status=<%= transactions.get(i).trans_status %>"><%= transactions.get(i).invoice %></a></div>
 						<div><%= transactions.get(i).title + "<br> Volume "+ transactions.get(i).volume %></div>
 						<div><b>Rp.</b><%= transactions.get(i).total_amount %></div>
 						<div><%= transactions.get(i).purchase_date %></div>
